@@ -37,3 +37,41 @@ Both of them accepts the arguments:
   
       nth<vector<double>>(array,k);
     }
+   
+   </br>
+   </br>
+<h1>C</h1
+    
+There are 2 different implementations,
+    
+    1) nth: find the nth smallest number (inth for integers and dnth for doubles)
+    2) partition: partitions the given array (ipartition for integers and dpartition for doubles)
+
+Both of them accepts the arguments:
+
+    1) obj: array of type int or double
+    2) left: indicates the beggining of the sequence to be partitioned.
+    3) right: indicates the end of the sequence to be partitioned.
+    4) Func: a function to compare the elements of the object. Accepts 2 argument of type int or double and returns an integer. By default defaultCompare.
+
+
+    #include "floyrd-rivest.h"
+    #include <time.h>
+    #include <stdlib.h>
+
+    int cmp(double a,double b){
+        return a < b ? -1 : (a > b ? 1 : 0);
+    }
+  
+    int main(){
+      double array[100];
+      int i;
+      srand(time(NULL));
+      for(i=0;i<100;++i)
+        array[i]=rand()%100;
+      
+      dpartition(array,k,cmp);
+  
+      dnth(array,k,cmp);
+    }
+
