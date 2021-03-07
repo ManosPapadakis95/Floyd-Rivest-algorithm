@@ -11,9 +11,9 @@
 typedef int(*Func_int)(int,int);
 typedef int(*Func_double)(double,double);
 
-void ipartition(int array[],int left,int right,int k,Func_int cmp);
-void dpartition(double array[],int left,int right,int k,Func_double cmp);
-int inth(int array[],int k,int left,int right, Func_int cmp);
-double dnth(double array[],int k,int left,int right, Func_double cmp);
+void ipartition(int[],int,int,int,Func_int);
+void dpartition(double[],int,int,int,Func_double);
+int inth(int[],int,int,int,Func_int);
+double dnth(double[],int,int,int,Func_double);
   
 #endif
