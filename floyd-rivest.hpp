@@ -32,7 +32,7 @@ static void select_h(T &array,int left,int right,int k, Func cmp = defaultCompar
       double sd = 0.5 * sqrt(z * s * (n - s)/n) * sgn(i - n/2);
       int newLeft = max(left, int(k - i * s/n + sd));
       int newRight = min(right, int(k + (n - i) * s/n + sd));
-      select_h<T>(array, newLeft, newRight, k);
+      select_h<T>(array, newLeft, newRight, k, cmp);
     }
     // partition the elements between left and right around t
     auto t = array[k] ;
