@@ -87,22 +87,18 @@ double nth(T &array,int k, Func cmp = defaultCompare<VT>){
 }
 
 template<typename T,typename Func = Compare<typename T::value_type>>
-T partition(T &array,int k,int left=0,int right=0, Func cmp = defaultCompare<typename T::value_type>){
+void partition(T &array,int k,int left=0,int right=0, Func cmp = defaultCompare<typename T::value_type>){
   select_h<T>(array,left,right==0 ? array.size()-1 : right,k,cmp);
-  return array;
 }
 template<typename T,typename VT,typename Func = Compare<VT>>
-T partition(T &array,int k,int left=0,int right=0, Func cmp = defaultCompare<VT>){
+void partition(T &array,int k,int left=0,int right=0, Func cmp = defaultCompare<VT>){
   select_h<T>(array,left,right==0 ? array.size()-1 : right,k,cmp);
-  return array;
 }
 template<typename T,typename Func = Compare<typename T::value_type>>
-T partition(T &array,int k, Func cmp = defaultCompare<typename T::value_type>){
+void partition(T &array,int k, Func cmp = defaultCompare<typename T::value_type>){
   select_h<T>(array,0,array.size()-1,k,cmp);
-  return array;
 }
 template<typename T,typename VT,typename Func = Compare<VT>>
-T partition(T &array,int k, Func cmp = defaultCompare<VT>){
+void partition(T &array,int k, Func cmp = defaultCompare<VT>){
   select_h<T>(array,0,array.size()-1,k,cmp);
-  return array;
 }
