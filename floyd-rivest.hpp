@@ -66,22 +66,22 @@ static void select_h(T &array,int left,int right,int k, Func cmp = defaultCompar
 }
 
 template<typename T,typename Func = Compare<typename T::value_type>>
-double nth(T &array,int k,int left=0,int right=0, Func cmp = defaultCompare<typename T::value_type>){
+typename T::value_type nth(T &array,int k,int left=0,int right=0, Func cmp = defaultCompare<typename T::value_type>){
   select_h<T>(array,left,right==0 ? array.size()-1 : right,k,cmp);
   return array[k-left+1];
 }
 template<typename T,typename VT,typename Func = Compare<VT>>
-double nth(T &array,int k,int left=0,int right=0, Func cmp = defaultCompare<VT>){
+VT nth(T &array,int k,int left=0,int right=0, Func cmp = defaultCompare<VT>){
   select_h<T>(array,left,right==0 ? array.size()-1 : right,k,cmp);
   return array[k-left+1];
 }
 template<typename T,typename Func = Compare<typename T::value_type>>
-double nth(T &array,int k, Func cmp = defaultCompare<typename T::value_type>){
+typename T::value_type nth(T &array,int k, Func cmp = defaultCompare<typename T::value_type>){
   select_h<T>(array,0,array.size()-1,k,cmp);
   return array[k+1];
 }
 template<typename T,typename VT,typename Func = Compare<VT>>
-double nth(T &array,int k, Func cmp = defaultCompare<VT>){
+VT nth(T &array,int k, Func cmp = defaultCompare<VT>){
   select_h<T>(array,0,array.size()-1,k,cmp);
   return array[k+1];
 }
