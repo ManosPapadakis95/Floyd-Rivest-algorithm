@@ -1,5 +1,5 @@
 # Floyd-Rivest-algorithm
-Floyd–Rivest algorithm is a selection algorithm developed by Robert W. Floyd and Ronald L. Rivest.
+Floyd–Rivest algorithm is a selection algorithm developed by Robert W. Floyd and Ronald L. Rivest. https://en.wikipedia.org/wiki/Floyd%E2%80%93Rivest_algorithm
 
 In this repository you can find the Floyd–Rivest algorithm in different programming languages.
 There are 2 different template implementations,
