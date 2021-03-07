@@ -46,9 +46,9 @@ static void select_h(T &array,int left,int right,int k, Func cmp = defaultCompar
       swap (array[i] , array[j]);
       ++i;
       --j;
-      for (;defaultCompare(array[i],t) < 0;++i);
-      for (;defaultCompare(array[j],t) > 0;--j);
-      if (defaultCompare(array[left] , t)==0) {
+      for (;cmp(array[i],t) < 0;++i);
+      for (;cmp(array[j],t) > 0;--j);
+      if (cmp(array[left] , t)==0) {
         swap (array[left] , array[j]);
       }
       else{
