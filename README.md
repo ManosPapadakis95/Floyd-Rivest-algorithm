@@ -2,6 +2,9 @@
 Floyd–Rivest algorithm is a selection algorithm developed by Robert W. Floyd and Ronald L. Rivest. https://en.wikipedia.org/wiki/Floyd%E2%80%93Rivest_algorithm
 
 In this repository you can find the Floyd–Rivest algorithm in different programming languages.
+
+<h1>C++</h1
+    
 There are 2 different template implementations,
     
     1) nth: find the nth smallest number (like C++'s nth_element)
@@ -17,7 +20,6 @@ Both of them accepts the arguments:
     3) right: indicates the end of the sequence to be partitioned. By default obj.size()-1.
     4) Func: a function - lambda function to compare the elements of the object. Accepts 2 argument of type value_type and returns an integer. By default defaultCompare.
 
-C++:
 
     #include "floyrd-rivest.hpp"
     #include <numeric>
