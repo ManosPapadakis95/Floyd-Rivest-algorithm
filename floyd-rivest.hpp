@@ -39,7 +39,7 @@ static void select_h(T &obj,int left,int right,int k, Func cmp = defaultCompare<
     auto i = left;
     auto j = right;
     swap(obj[left] , obj[k]);
-    if (obj[right] > t) {
+    if (cmp(obj[right] , t)>0) {
       swap (obj[right] , obj[left]);
     }
     while (i < j) {
@@ -48,20 +48,20 @@ static void select_h(T &obj,int left,int right,int k, Func cmp = defaultCompare<
       --j;
       for (;cmp(obj[i],t) < 0;++i);
       for (;cmp(obj[j],t) > 0;--j);
-      if (cmp(obj[left] , t)==0) {
-        swap (obj[left] , obj[j]);
-      }
-      else{
-        ++j;
-        swap (obj[j] , obj[right]);
-      }
-      // Adjust left and right towards the boundaries of the subset
-      // containing the (k - left + 1)th smallest element.
-      if (j <= k)
-        left = j + 1;
-      if (k <= j)
-        right = j - 1;
     }
+    if (cmp(obj[left] , t)==0) {
+      swap (obj[left] , obj[j]);
+    }
+    else{
+      ++j;
+      swap (obj[j] , obj[right]);
+    }
+    // Adjust left and right towards the boundaries of the subset
+    // containing the (k - left + 1)th smallest element.
+    if (j <= k)
+      left = j + 1;
+    if (k <= j)
+      right = j - 1;
   }
 }
 
